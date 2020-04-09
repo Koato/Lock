@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
     public void habilitar(View view){
         Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
         intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, compName);
-        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Additional text explaining why we need this permission");
+        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Texto adicional que explica por qué necesitamos este permiso");
         startActivity(intent);
+        //una vez que se autoriza se cierra la solicitud
+        finish();
     }
 
     public void deshabilitar(View view){
